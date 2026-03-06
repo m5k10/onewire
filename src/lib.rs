@@ -593,8 +593,7 @@ impl<E: core::fmt::Debug, ODO: OpenDrainOutput<Error = E>> OneWire<ODO> {
 
     fn disable_parasite_mode(&mut self) -> Result<(), E> {
         // let cli = DisableInterrupts::new();
-        self.set_input()?;
-        self.write_low()
+        self.set_input()
     }
 
     fn set_input(&mut self) -> Result<(), E> {
